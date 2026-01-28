@@ -7,7 +7,7 @@ import java.util.Arrays;
 import java.util.List;
 
 @Service
-public class CarServiseImp implements Carservise {
+public class CarServiseImp implements CarServise {
 
     private List<Car> cars = Arrays.asList(
             new Car("Toyota", "red", 2015),
@@ -17,8 +17,8 @@ public class CarServiseImp implements Carservise {
             new Car("Subaru", "black", 2018)
     );
     @Override
-    public List<Car> getCars(int count) {
-        int carCount = (count <= 0) ? 5 : count;
+    public List<Car> getCars(Integer count) {
+        int carCount = (count == null || count <= 0) ? 5 : count;
         if (carCount >= cars.size()){
             return cars;
         }
